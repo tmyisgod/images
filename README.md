@@ -32,7 +32,7 @@ GitHub 是全球最大的基于 Git 的代码托管平台之一，许多开发�
 
 ### 4.1 指标模型计算的设计
 
-![~%0_G7LCG77C9N{_K3PGDP7](https://github.com/tmyisgod/images@main/picture/clip_image002.jpg)
+![~%0_G7LCG77C9N{_K3PGDP7](https://github.com/tmyisgod/images/blob/3e2279f3983a0315d5d79999f42404f59a5d4ea9/picture/clip_image002.jpg)
 
  
 
