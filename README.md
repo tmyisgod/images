@@ -32,21 +32,19 @@ GitHub 是全球最大的基于 Git 的代码托管平台之一，许多开发�
 
 ### 4.1 指标模型计算的设计
 
-![~%0_G7LCG77C9N{_K3PGDP7](https://github.com/tmyisgod/images/blob/3e2279f3983a0315d5d79999f42404f59a5d4ea9/picture/clip_image002.jpg)
-
- 
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image002.jpg)
 
 以下是开发者项目管理能力的计算公式：
 
 公式（1）：
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image004.gif)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image004.gif)
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image006.gif) 
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image006.gif) 
 
-公式（2）：![img](https://github.com/tmyisgod/images@main/picture/clip_image008.gif)
+公式（2）：![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image008.gif)
 
-其中A表示开发者项目管理能力值，![img](https://github.com/tmyisgod/images@main/picture/clip_image010.gif)表示该影响因素的权重因子，![img](https://github.com/tmyisgod/images@main/picture/clip_image012.gif)表示开发者管理项目中亲自回复的issue的数量，例如某个开发者总计回复了多少个issue，根据issue的数量给予得分。![img](https://github.com/tmyisgod/images@main/picture/clip_image014.gif)表示以该影响因素为自变量的函数值，函数![img](https://github.com/tmyisgod/images@main/picture/clip_image016.gif)即为相应影响因素的实际映射方式。例如某个开发者总计回复了多少个issue，根据issue的数量给予得分。
+其中A表示开发者项目管理能力值，![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image010.gif)表示该影响因素的权重因子，![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image012.gif)表示开发者管理项目中亲自回复的issue的数量，例如某个开发者总计回复了多少个issue，根据issue的数量给予得分。![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image014.gif)表示以该影响因素为自变量的函数值，函数![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image016.gif)即为相应影响因素的实际映射方式。例如某个开发者总计回复了多少个issue，根据issue的数量给予得分。
 
 S1，S2，S3……Sn表示开发者各个指标在n个不同项目仓库的得分，f(Z)表示开发者在所有项目仓库的总得分。
 
@@ -58,7 +56,7 @@ S1，S2，S3……Sn表示开发者各个指标在n个不同项目仓库的得�
 
 研究项目管理能力，共有如下表中四个影响因素，此表共有三十万条开发者的数据，当前通过对已有的四个影响因素的数据对其进行分析，得出各个影响因素的权重，便于我们对各个影响因素设立权重，从而来设计计算公式，再进行项目管理能力后续的综合评价。其中部分数据展示如表1：
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image018.jpg)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image018.jpg)
 
 **表1 开发者项目管理能力影响因素的部分数据**
 
@@ -68,7 +66,7 @@ CRITIC权重法利用了数据的波动性和相关关系情况，并非数字�
 
 SPSS软件平台提供了广泛的高级统计分析和机器学习算法，以及文本分析等功能，同时也具备开源可扩展性，并且可以轻松与大数据集成，从而实现无缝部署到应用程序中的功能。使用SPSS软件平台，可以更加精确地分析出影响指标的四个因素之间的权重分布，为进一步的研究和应用提供了有力的支持。    SPSSAU共输出一个表格，表格中包括指标变异性，冲突性指标的具体值，并且得到信息量值（指标变异性*指标冲突性），并得到最后的权重（即信息量的归一化值）。如表2所示：
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image020.jpg)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image020.jpg)
 
 **表2 在SPSSAU中CRITIC的计算结果**
 
@@ -92,9 +90,9 @@ Wissue_answer=0.3801, Wpr=0.2400, Wrelease_count=0.1730, Wrep_sum=0.2069
 
 对单个影响因素例如合并pr的数量记为pr_merged,在指标计算模型中它的具体价值与对管理能力的贡献值以分段函数的方式确定，下面以影响因素pr_merged为例，给出映射函数f的设计依据，并进行合理性分析。这里先给出对应上述四个影响因素的映射函数f的表达式如公式所示:
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image022.gif)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image022.gif)
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image024.gif)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image024.gif)
 
  
 
@@ -106,13 +104,13 @@ Wissue_answer=0.3801, Wpr=0.2400, Wrelease_count=0.1730, Wrep_sum=0.2069
 
 我们统计了2020年将近30万个开发者的数据，并且统计了开发者们在他们管理的不同的库里合并pr的数量。我们根据这个数量需要得到开发者在不同库里合并1个或多个pr的价值是多少，即给多少分值，因为开发者大多数仓库合并pr的数量都很少。为了得到这个分值，我们将所有开发者在单个库里合并pr为1、2、3、…或者更多的总数给统计起来了。然后通过这些总数的占比划分区间分别给予不同的分数。部分数据如下图所示：
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image025.jpg)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image025.jpg)
 
 **图1 不同库里的所作pr数量不同对应开发者数量表**
 
  
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image027.jpg)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image027.jpg)
 
 **图2 不同库里的所作pr数量在不同区间的分布图**
 
@@ -151,7 +149,7 @@ Wissue_answer=0.3801, Wpr=0.2400, Wrelease_count=0.1730, Wrep_sum=0.2069
 
 部分字段信息如下：
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image029.jpg)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image029.jpg)
 
 对于我们需要进行分析的数据，首先，我们要确定进行数据分析的用户人数，以及对这些人数的筛选。为了减少在GitHub上无任何活动的用户，我们只统计了在Github里创建了仓库或者管理仓库的用户，总共30万开发者，利用这个数量的开发者全域数据来进行分析也是比较合理的。
 
@@ -169,7 +167,7 @@ Wissue_answer=0.3801, Wpr=0.2400, Wrelease_count=0.1730, Wrep_sum=0.2069
 
 下图为部分开发者的项目管理能力的得分：
 
-![image-20230624214250423](https://github.com/tmyisgod/images@main/picture/image-20230624214250423.png)
+![image-20230624214250423](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/image-20230624214250423.png)
 
 如表所示，第一列为开发者的用户名，第二列为开发者项目管理能力的最终得分。
 
@@ -179,15 +177,15 @@ Wissue_answer=0.3801, Wpr=0.2400, Wrelease_count=0.1730, Wrep_sum=0.2069
 
 （1）开发者所创建所有项目的仓库名称，以及这些项目仓库的热度大小：
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image033.jpg)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image033.jpg)
 
 （2）开发者在每个项目仓库中合并pr的数量：
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image035.jpg)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image035.jpg)
 
 （3）开发者项目管理能力的四个影响因素的得分，以及排名。
 
-![img](https://github.com/tmyisgod/images@main/picture/clip_image037.jpg)
+![img](https://github.com/tmyisgod/images/blob/601579f548186b82863baee4f274bd223ba2ffc4/picture/clip_image037.jpg)
 
 # 参考资料
 
